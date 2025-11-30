@@ -23,6 +23,26 @@
             min-height: 100vh;
             padding: 20px;
             position: relative;
+            overflow: hidden;
+        }
+        
+        /* Fondo animado de humo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/smoke.png');
+            opacity: 0.1;
+            animation: smokeMove 60s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes smokeMove {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
         }
         
         .profile-container {
@@ -30,15 +50,23 @@
             flex-direction: column;
             align-items: center;
             margin-bottom: 40px;
+            z-index: 1;
         }
         
         .profile-image {
-            width: 120px;
-            height: 120px;
+            width: 156px;
+            height: 156px;
             border-radius: 50%;
             margin-bottom: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 3px solid transparent;
             object-fit: cover;
+            background-image: linear-gradient(black, black), 
+                              linear-gradient(to right, #9d4edd, #c77dff, #e0aaff, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0, #4361ee, #3f37c9, #3a0ca3, #480ca8, #560bad, #7209b7, #e0aaff, #c77dff, #9d4edd);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-size: 200% 100%;
+            animation: rainbow 8s linear infinite;
+            box-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
         }
         
         .name {
@@ -46,11 +74,13 @@
             font-weight: 300;
             letter-spacing: 2px;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
         
         .links-container {
             width: 100%;
             max-width: 500px;
+            z-index: 1;
         }
         
         .link-button {
@@ -126,6 +156,7 @@
             text-underline-offset: 4px;
             transition: all 0.3s ease;
             cursor: pointer;
+            z-index: 1;
         }
         
         .whatsapp-link:hover {
@@ -152,12 +183,12 @@
 </head>
 <body>
     <div class="profile-container">
-        <img src="https://picsum.photos/seed/bmprofile/120/120.jpg" alt="BM Profile" class="profile-image">
+        <img src="./images/profile.jpg" alt="BM Profile" class="profile-image">
         <h1 class="name">BM</h1>
     </div>
     
     <div class="links-container">
-        <a href="https://youtube.com/@bmskr4607?si=9ZLN5Rrk-WCk2oT2" class="link-button" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://youtube.com/@bmskr4607" class="link-button" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
         <a href="https://open.spotify.com/artist/7vsReDFG9uY3ZFuhGKzs8t?si=LJxu_GGjTZCPBfpdKObzFw" class="link-button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
         <a href="https://www.tiktok.com/@bm_v.v?_r=1&_t=ZM-91o9eZQghjs" class="link-button" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
     </div>
