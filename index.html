@@ -220,7 +220,7 @@
         }
         
         .whatsapp-link {
-            position: absolute;
+            position: fixed;
             bottom: 30px;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
@@ -229,7 +229,7 @@
             text-underline-offset: 4px;
             transition: all 0.3s ease;
             cursor: pointer;
-            z-index: 1;
+            z-index: 10;
         }
         
         .whatsapp-link:hover {
@@ -298,9 +298,19 @@
                 // Posición horizontal aleatoria
                 particle.style.left = Math.random() * 100 + '%';
                 
-                // Color aleatorio del arcoíris
-                const hue = Math.random() * 360;
-                particle.style.background = `radial-gradient(circle, hsla(${hue}, 100%, 70%, 0.8) 0%, hsla(${hue}, 100%, 70%, 0) 70%)`;
+                // Colores oscuros: azules, morados y verdes
+                const colors = [
+                    'hsla(220, 80%, 50%, 0.6)',  // Azul
+                    'hsla(260, 80%, 50%, 0.6)',  // Morado
+                    'hsla(280, 80%, 50%, 0.6)',  // Púrpura
+                    'hsla(300, 80%, 50%, 0.6)',  // Violeta
+                    'hsla(180, 80%, 40%, 0.6)',  // Verde azulado
+                    'hsla(200, 80%, 40%, 0.6)'   // Cian
+                ];
+                
+                // Seleccionar un color aleatorio de la paleta
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.background = `radial-gradient(circle, ${randomColor} 0%, ${randomColor.replace('0.6', '0')} 70%)`;
                 
                 // Retraso aleatorio para la animación
                 particle.style.animationDelay = Math.random() * 15 + 's';
