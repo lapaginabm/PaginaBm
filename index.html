@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BM - Enlaces</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+        }
+        
+        .name {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .links-container {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            text-align: center;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+            background-image: linear-gradient(black, black), 
+                              linear-gradient(to right, #9d4edd, #c77dff, #e0aaff, #7209b7, #560bad, #480ca8, #3a0ca3, #3f37c9, #4361ee, #4895ef, #4cc9f0, #4361ee, #3f37c9, #3a0ca3, #480ca8, #560bad, #7209b7, #e0aaff, #c77dff, #9d4edd);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            background-size: 200% 100%;
+            animation: rainbow 8s linear infinite, float 3s ease-in-out infinite;
+        }
+        
+        .link-button i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        @keyframes rainbow {
+            0% { background-position: 0% 0%, 0% 0%; }
+            100% { background-position: 0% 0%, 200% 0%; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .link-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            animation-play-state: paused;
+        }
+        
+        .link-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .link-button:hover::before {
+            opacity: 1;
+        }
+        
+        .whatsapp-link {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: underline;
+            text-decoration-color: rgba(255, 255, 255, 0.3);
+            text-underline-offset: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .whatsapp-link:hover {
+            color: rgba(255, 255, 255, 1);
+            text-decoration-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 480px) {
+            .name {
+                font-size: 2rem;
+            }
+            
+            .link-button {
+                padding: 16px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .whatsapp-link {
+                font-size: 0.85rem;
+                bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <img src="https://picsum.photos/seed/bmprofile/120/120.jpg" alt="BM Profile" class="profile-image">
+        <h1 class="name">BM</h1>
+    </div>
+    
+    <div class="links-container">
+        <a href="https://youtube.com/@bmskr4607?si=9ZLN5Rrk-WCk2oT2" class="link-button" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://open.spotify.com/artist/7vsReDFG9uY3ZFuhGKzs8t?si=LJxu_GGjTZCPBfpdKObzFw" class="link-button" target="_blank"><i class="fab fa-spotify"></i> Spotify</a>
+        <a href="https://www.tiktok.com/@bm_v.v?_r=1&_t=ZM-91o9eZQghjs" class="link-button" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </div>
+    
+    <a href="https://wa.me/543834619831?text=Hola%2C%20quisiera%20consultar%20precios%20para%20tener%20mi%20propia%20p%C3%A1gina%20web%20personalizada." class="whatsapp-link" target="_blank">quiero mi página también</a>
+</body>
+</html>
